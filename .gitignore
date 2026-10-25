@@ -1,0 +1,21 @@
+
+# Dependencies and generated files
+node_modules/
+dist/
+.astro/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Debug output
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
