@@ -148,30 +148,47 @@ const process = [
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#09090f" />
-    <meta
-      name="description"
-      content="Emirate Studios is an independent creative studio building distinctive brands, digital experiences, and visual identities."
-    />
-    <meta
-      name="keywords"
-      content="Emirate Studios, graphic design, brand identity, digital design, art direction"
-    />
-    <meta property="og:title" content="Emirate Studios — Ideas into Identity" />
-    <meta
-      property="og:description"
-      content="We build bold identities and digital experiences for brands with something to say."
-    />
-    <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Emirate Studios — Ideas into Identity</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#09090f" />
+
+  <meta
+    name="description"
+    content="Emirate Studios is an independent creative studio building distinctive brand identities, digital experiences, and visual campaigns."
+  />
+
+  <link
+    rel="canonical"
+    href="https://emirate-studios.vercel.app/"
+  />
+
+  <meta property="og:site_name" content="Emirate Studios" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:url"
+    content="https://emirate-studios.vercel.app/"
+  />
+  <meta
+    property="og:title"
+    content="Emirate Studios — Ideas into Identity"
+  />
+  <meta
+    property="og:description"
+    content="We build bold identities and digital experiences for brands with something to say."
+  />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <title>Emirate Studios — Ideas into Identity</title>
   </head>
 
   <body>
@@ -617,17 +634,30 @@ const process = [
         });
       });
 
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
+
+const revealElements = document.querySelectorAll(
+  ".process-card, .project-card, .service-row, .case-card, .review-card"
+);
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revealElements.forEach((element) => {
+    element.classList.add("reveal");
+    revealObserver.observe(element);
+  });
+}
+
 
       document
         .querySelectorAll(

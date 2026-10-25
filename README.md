@@ -1,39 +1,46 @@
 # Emirate Studios — Astro Portfolio
 
-A responsive, dark creative-studio portfolio concept built with Astro, plain CSS, and lightweight browser JavaScript.
+A responsive, dark editorial portfolio for Emirate Studios, built with
+Astro, CSS, and lightweight browser JavaScript.
 
-## Included sections
+**Production website:** https://emirate-studios.vercel.app/
 
-* Hero and studio statistics
-* About and studio process
-* Selected portfolio with category filters
-* Projects gallery
-* Case studies
-* Client reviews
-* Contact form UI
-* Footer
+## Features
+
+- Responsive single-page portfolio
+- Hero and studio introduction
+- Studio process section
+- Selected projects with category filters
+- Services overview
+- Illustrative case studies
+- Testimonial section
+- Contact link using the visitor's email application
+- Responsive mobile navigation
+- Scroll-reveal animations
+- Keyboard-focus styling and reduced-motion support
+- Canonical URL and Open Graph metadata
+- Automatically generated XML sitemap
+- Public robots.txt file
+- SVG favicon
+
+## Technology stack
+
+- Astro
+- JavaScript
+- CSS
+- npm
+- Astro sitemap integration
 
 ## Requirements
 
-* Node.js 22.12.0 or newer
-* npm
+- Node.js 22.23.4 or newer
+- npm
 
 ## Run locally
 
-1. Extract the ZIP.
-2. Open a terminal in this folder.
-3. Run `npm install`.
-4. Run `npm run dev`.
-5. Open the local URL shown in the terminal (usually `http://localhost:4321`).
+Open a terminal in the project directory and run:
 
-## Production build
+1. Install dependencies:
 
-Run `npm run build`, then `npm run preview`.
-
-## Important notes
-
-* Portfolio imagery currently uses remote images from Unsplash. An internet connection is needed to load them.
-* The contact form is a front-end demonstration and does not send or store messages yet. Connect it to a backend or form service before launch.
-* Replace the sample projects, testimonials, email, phone, and social links with verified brand information.
-* The design uses CSS reveal animations and respects `prefers-reduced-motion`.
-
+   ```bash
+   npm install
